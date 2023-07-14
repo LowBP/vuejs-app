@@ -18,7 +18,7 @@ type IState = {
   isLoading: boolean
 }
 
-type ITabDetailWithTabId = ITabDetail & ITabId
+export type ITabDetailWithTabId = ITabDetail & ITabId
 
 export const usePluginStore = defineStore('plugin', {
   state: () =>

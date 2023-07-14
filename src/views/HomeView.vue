@@ -1,6 +1,7 @@
 <template>
   <div>
     <SideBar :tabDetails="store.tabDetails" :selectedTab="selectedTab?.valueOf()" />
+    <RouterView />
   </div>
 </template>
 
@@ -34,7 +35,7 @@ watchEffect(() => {
   }
 
   // set activeTabName to display the page title
-  if (selectedTab.value && !store.activeTabName) {
+  if (selectedTab.value) {
     store.setActiveTabName(selectedTab.value)
   }
 })
