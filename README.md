@@ -1,31 +1,29 @@
-# vuejs-app
+# Vue.js Application with JSON Server
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a Vuejs application that allows users to view, and toggle the state of each plugin. The plugin details are stored in the json-server.
 
-## Recommended IDE Setup
+## Note
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Please add your weather_api key to `VITE_APP_API_URL=http://localhost:8080` in .env.local 
 
-## Type Support for `.vue` Imports in TS
+## Instructions to run locally
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+To install the required packages from npm, follow these steps:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+1. Clone the repository to your local machine.
+2. Navigate to the project directory using the command line.
+3. Run the following command to install the dependencies:
 
 ```sh
 npm install
 ```
+
+### Start json-server 
+
+```sh
+npm run server
+```
+
 
 ### Compile and Hot-Reload for Development
 
@@ -39,30 +37,24 @@ npm run dev
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-npm run lint
+npm run lint && npm run format
 ```
+
+### Task 
+
+- [ ] Testcases
+
+
+### Screenshots 
+
+<img width="1680" alt="image" src="https://github.com/LowBP/vuejs-app/assets/33143395/1153dac4-d1b1-45c6-8e7e-72a506410414">
+
+<img width="1651" alt="image" src="https://github.com/LowBP/vuejs-app/assets/33143395/e1182586-e756-4772-862a-a8a3a95a0bbb">
+
+<img width="605" alt="image" src="https://github.com/LowBP/vuejs-app/assets/33143395/533cc93f-9487-4bd1-8b27-873f20604cde">
+
+
+
