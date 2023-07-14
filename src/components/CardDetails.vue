@@ -34,11 +34,15 @@
       </div>
     </div>
   </div>
+  <!-- SkeletonLoader -->
+  <CardLoader :isLoading="store.isLoading" />
+  <CardLoader :isLoading="store.isLoading" />
 </template>
 
 <script setup lang="ts">
 import ToggleButton from '@/components/ToggleButton.vue'
 import { usePluginStore } from '@/stores/plugin'
+import CardLoader from '@/components/CardLoader.vue'
 
 defineProps<{ pluginCards: any[] }>()
 

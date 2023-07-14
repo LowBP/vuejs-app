@@ -48,17 +48,20 @@ export const usePluginStore = defineStore('plugin', {
   actions: {
     async getPluginPageDetail() {
       this.isLoading = true
-      try {
-        const { data } = await http.get('/plugins')
-        this.pluginResponseDetail = await data.data
-      } catch (error) {
-        console.error('Error fetching data:', error)
-        if ((error as { code: string }).code === 'ERR_NETWORK') {
-          alert('Please run server command in your terminal: ie.. npm run server')
+      // add some loading time to show loader
+      setTimeout(async () => {
+        try {
+          const { data } = await http.get('/plugins')
+          this.pluginResponseDetail = await data.data
+        } catch (error) {
+          console.error('Error fetching data:', error)
+          if ((error as { code: string }).code === 'ERR_NETWORK') {
+            alert('Please run server command in your terminal: ie.. npm run server')
+          }
+        } finally {
+          this.isLoading = false
         }
-      } finally {
-        this.isLoading = false
-      }
+      }, 500)
     },
     postPluginsPageDetail(isToggleDisableAllPlugin: boolean = false) {
       const payload = generateDataPayload({

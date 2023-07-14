@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { type ITabDetail } from '@/types/PluginResponseDetail'
 import ToggleButton from '@/components/ToggleButton.vue'
 import { usePluginStore } from '@/stores/plugin'
+import SkeletonLoader from '@/components/SkeletonLoader.vue'
 
 defineProps<{ tabDetails: ITabDetail[]; selectedTab: string }>()
 
@@ -98,9 +99,16 @@ const onToggleDisableOrEnableAllPlugins = () => {
             <span class="ml-3 hover:text-black">{{ item.title }}</span>
           </router-link>
         </li>
+        <!-- SkeletonLoader -->
+        <li class="transition-opacity duration-300" v-if="store.isLoading">
+          <SkeletonLoader class="h-10 ml-5 mr-5 mb-6 mt-4" />
+          <SkeletonLoader class="h-10 ml-5 mr-5 mb-6" />
+          <SkeletonLoader class="h-10 ml-5 mr-5" />
+        </li>
       </ul>
       <div class="absolute bottom-0 p-3 w-full">
-        <div class="inline-flex">
+        <SkeletonLoader class="h-10 ml-5 mr-5 mb-6 mt-4" v-if="store.isLoading" />
+        <div class="inline-flex" v-if="!store.isLoading">
           <p class="pr-6">All plugins {{ store.isDisableAllPlugins ? 'Enabled' : 'Disabled' }}</p>
           <ToggleButton
             v-model:checked="store.isDisableAllPlugins"
