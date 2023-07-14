@@ -6,6 +6,11 @@ This is a Vuejs application that allows users to view, and toggle the state of e
 
 Please add your weather_api key to `VITE_APP_API_URL=http://localhost:8080` in .env.local 
 
+## API 
+
+- [Plugins API](https://data-guard.onrender.com/plugins) for live testing
+- [Repo link](https://github.com/LowBP/json-server) of deployed server
+
 ## Instructions to run locally
 
 To install the required packages from npm, follow these steps:
