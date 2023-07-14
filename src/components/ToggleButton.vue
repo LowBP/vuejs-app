@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col">
     <label
-      class="relative flex items-center mr-5 cursor-pointer mb-2"
-      :class="{ 'cursor-not-allowed': disabled }"
+      class="relative flex items-center mr-5 mb-2"
+      :class="{ 'cursor-not-allowed': disabled, 'cursor-pointer': !disabled }"
     >
       <input
         type="checkbox"
