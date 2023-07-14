@@ -5,7 +5,7 @@
     :key="item.title"
   >
     <div
-      class="border-r border-b border-l border-gray-300 border-t bg-white rounded-b rounded-r rounded-t p-5 flex flex-col justify-between leading-normal h-60 w-full"
+      class="border-r border-b border-l border-gray-300 border-t bg-white rounded-b rounded-r rounded-t p-5 flex flex-col justify-between leading-normal lg:sm:h-60 w-full"
     >
       <div class="">
         <div class="flex justify-between mb-3">
