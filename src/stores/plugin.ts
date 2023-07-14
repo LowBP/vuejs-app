@@ -53,6 +53,9 @@ export const usePluginStore = defineStore('plugin', {
         this.pluginResponseDetail = await data.data
       } catch (error) {
         console.error('Error fetching data:', error)
+        if ((error as { code: string }).code === 'ERR_NETWORK') {
+          alert('Please run server command in your terminal: ie.. npm run server')
+        }
       } finally {
         this.isLoading = false
       }
